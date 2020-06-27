@@ -2,6 +2,8 @@
 
 int main()
 {
+    //    freopen("data.in", "r", stdin);
+    //    freopen("test.out", "w", stdout);
     int matrix[100][100];
     int m;
     int n;
@@ -13,7 +15,7 @@ int main()
     int j;
     int times;
     int p = 0;
-    //�������
+    //锟斤拷锟斤拷锟斤拷锟?
     scanf("%d %d", &m, &n);
     for (i = 0; i < m; i++)
     {
@@ -22,7 +24,7 @@ int main()
             scanf("%d", &matrix[i][j]);
         }
     }
-    //��������
+    //锟斤拷锟斤拷锟斤拷锟斤拷
     int k;
     int l;
     k = m;
@@ -37,7 +39,7 @@ int main()
             matrixpass[i][j] = 0;
         }
     }
-    if (times <= m * n)
+    while (times < m * n)
     {
         for (i = 0; i < 6; i++)
         {

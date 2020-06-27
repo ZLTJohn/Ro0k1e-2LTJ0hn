@@ -2,8 +2,8 @@
 
 int main()
 {
-    freopen("data.in", "r", stdin);
-    //freopen("test.out", "w", stdout);
+    //   freopen("data.in", "r", stdin);
+    //   freopen("test.out", "w", stdout);
     int matrix[100][100];
     int m;
     int n;
@@ -19,6 +19,7 @@ int main()
     }
 
     int start = 0, column = n, row = m;
+    int term = 0; //判断是否进行过输出
     while (start < column && start < row)
     {
         if (n == 1)
@@ -51,41 +52,79 @@ int main()
             {
                 if (start + 1 == row && column - 1 == j)
                 {
+                    if (term == 1)
+                        putchar(' ');
                     printf("%d", matrix[start][j]);
+                    term = 1;
                     break;
                 }
                 else
-                    printf("%d ", matrix[start][j]);
+                {
+                    if (term == 1)
+                        putchar(' ');
+                    printf("%d", matrix[start][j]);
+                    term = 1;
+                }
             }
             for (int i = start + 1; i < row; i++)
             {
                 if (i + 1 == row && column - 2 == start)
                 {
+                    if (term == 1)
+                        putchar(' ');
                     printf("%d", matrix[i][column - 1]);
+                    term = 1;
                     break;
                 }
                 else
-                    printf("%d ", matrix[i][column - 1]);
-            }
-            for (int j = column - 2; j >= start; j--)
-            {
-                if (row - 2 == start && j == start)
                 {
-                    printf("%d", matrix[row - 1][j]);
-                    break;
+                    if (term == 1)
+                        putchar(' ');
+                    printf("%d", matrix[i][column - 1]);
+                    term = 1;
                 }
-                else
-                    printf("%d ", matrix[row - 1][j]);
             }
-            for (int i = row - 2; i > start; i--)
+            if (row - 1 > start)
             {
-                if (i == start + 1 && start + 1 == column - 1)
+                for (int j = column - 2; j >= start; j--)
                 {
-                    printf("%d", matrix[i][start]);
-                    break;
+                    if (row - 2 == start && j == start)
+                    {
+                        if (term == 1)
+                            putchar(' ');
+                        printf("%d", matrix[row - 1][j]);
+                        term = 1;
+                        break;
+                    }
+                    else
+                    {
+                        if (term == 1)
+                            putchar(' ');
+                        printf("%d", matrix[row - 1][j]);
+                        term = 1;
+                    }
                 }
-                else
-                    printf("%d ", matrix[i][start]);
+            }
+            if (column - 1 > start)
+            {
+                for (int i = row - 2; i > start; i--)
+                {
+                    if (i == start + 1 && start + 1 == column - 1)
+                    {
+                        if (term == 1)
+                            putchar(' ');
+                        printf("%d", matrix[i][start]);
+                        term = 1;
+                        break;
+                    }
+                    else
+                    {
+                        if (term == 1)
+                            putchar(' ');
+                        printf("%d", matrix[i][start]);
+                        term = 1;
+                    }
+                }
             }
         }
         start++;

@@ -2,6 +2,8 @@
 
 int main()
 {
+	//    freopen("data.in", "r", stdin);
+	//    freopen("test.out", "w", stdout);
 	int matrix[100][100];
 	int m;
 	int n;
@@ -28,8 +30,10 @@ int main()
 	//printf("\nThe first line of the original matrix is:");
 	for (j = 0; j < n; j++)
 	{
-		printf("%d ", matrix[0][j]);
+		printf("%d", matrix[0][j]);
 		count++;
+		if (count < max)
+			printf(" ");
 	}
 	//printf("\n");
 
