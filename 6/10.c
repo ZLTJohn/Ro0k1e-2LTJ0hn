@@ -1,37 +1,46 @@
 #include <stdio.h>
-int main() {
+int main()
+{
+    //    freopen("data.in", "r", stdin);
+    //    freopen("test.out", "w", stdout);
     char pms[3];
     char change_pms[100][2];
     int i;
     i = 0;
     int j;
     //int num = 0;
-    int a;//ÎÄ¼ş±¾À´µÄÈ¨ÏŞÖµ
+    int a; //æ–‡ä»¶æœ¬æ¥çš„æƒé™å€¼
     a = 0;
     int b;
     b = 0;
     int c;
     c = 0;
-    
-    //ÊäÈëµ±Ç°ÎÄ¼şÈ¨ÏŞ
+
+    //è¾“å…¥å½“å‰æ–‡ä»¶æƒé™
     scanf("%s\n", pms);
     //printf("%s", pms);
-    //ÊäÈëÌí¼Ó»òÕßÉ¾³ıµÄÎÄ¼şÈ¨ÏŞ
-    while (scanf("%s\n",change_pms[i++]) != EOF) {
-        scanf("%s\n",change_pms[i++]); 
-    }
-    //ÅĞ¶ÏÔ­ÎÄ¼şµÄÈ¨ÏŞ£¬ÓÃÊ®½øÖÆ±íÊ¾
-    for (i = 0; i < strlen(pms); i++) {
-        if (pms[i] == 'r') {
+    //è¾“å…¥æ·»åŠ æˆ–è€…åˆ é™¤çš„æ–‡ä»¶æƒé™
+    while (scanf("%s\n", change_pms[i++]) != EOF)
+        ;
+    j = i;
+    //åˆ¤æ–­åŸæ–‡ä»¶çš„æƒé™ï¼Œç”¨åè¿›åˆ¶è¡¨ç¤º
+    for (i = 0; i < strlen(pms); i++)
+    {
+        if (pms[i] == 'r')
+        {
             a += 4;
-        } else if (pms[i] == 'w') {
+        }
+        else if (pms[i] == 'w')
+        {
             a += 2;
-        } else {
+        }
+        else
+        {
             a += 1;
-        } 
+        }
     }
     //printf("%d\n", a);
-   /* for (i = 0; i <= strlen(change_pms[i]); i++) 
+    /* for (i = 0; i <= strlen(change_pms[i]); i++) 
     {
         j = 0;
         if (change_pms[i][j] == '+') 
@@ -60,30 +69,37 @@ int main() {
                 b = b - 1;
             }
         }*/
-    
-    for (i = 0; i < strlen(change_pms[i]); i++) {
-        j = 0;
-        if (change_pms[i][j] == '+') {
-            if (change_pms[i][j + 1] == 'r') 
-           {
-               b += 4;   
-            } else if (change_pms[i][j + 1] == 'w') 
-           {
-                b += 2;
-            } else 
-           {
-                b += 1;
+    b = a;
+    for (i = 0; i < j - 1; i++)
+    {
+        if (change_pms[i][0] == '+')
+        {
+            if (change_pms[i][0 + 1] == 'r')
+            {
+                b |= 4;
             }
-        } else {
-            if (change_pms[i][j + 1] == 'r') 
-           {
-               b -= 4;   
-            } else if (change_pms[i][j + 1] == 'w') 
-           {
-                b -= 2;
-            } else 
-           {
-                b -= 1;
+            else if (change_pms[i][0 + 1] == 'w')
+            {
+                b |= 2;
+            }
+            else
+            {
+                b |= 1;
+            }
+        }
+        else
+        {
+            if (change_pms[i][0 + 1] == 'r')
+            {
+                b &= 3;
+            }
+            else if (change_pms[i][0 + 1] == 'w')
+            {
+                b &= 5;
+            }
+            else
+            {
+                b &= 6;
             }
         }
     }
@@ -93,6 +109,6 @@ int main() {
     //printf("%d\n", strlen(change_pms[0]);
     //printf("%d\n", b);
     //printf("%d\n", c);
-    printf("%d", a + b);
+    printf("%d", b);
     return 0;
 }
