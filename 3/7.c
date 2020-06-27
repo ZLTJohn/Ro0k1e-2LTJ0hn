@@ -1,5 +1,6 @@
 #include <stdio.h>
-int main() {
+int main()
+{
     int matrix[100][100];
     int m;
     int n;
@@ -9,59 +10,73 @@ int main() {
     int startY;
     int endX;
     int endY;
-   
+
     startX = 0;
     startY = 0;
     endX = m;
     endY = n;
-   
-    //ÊäÈëĞĞÊım£¬ÁĞÊın
+
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½n
     scanf("%d %d", &m, &n);
-    // ÊäÈëÒ»¸öm*nµÄ¾ØÕó
-    for (i = 0; i < m; i++){
-        for (j = 0; j < n; j++){
+    // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½m*nï¿½Ä¾ï¿½ï¿½ï¿½
+    for (i = 0; i < m; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
             scanf("%d", &matrix[i][j]);
         }
     }
-   
-    // ÅĞ¶ÏÑ­»·È¦ÊıµÄÌõ¼ş
-    while (startX * 2 < m && startY * 2 < n) {
+
+    // ï¿½Ğ¶ï¿½Ñ­ï¿½ï¿½È¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    while (startX * 2 < m && startY * 2 < n)
+    {
         endX = m - 1 - startX;
         endY = n - 1 - startY;
-        // Êä³öµÚÒ»²½
-        if (startY < endY) {
-            for (j = startY; j <= endY; j++) {
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+        if (startY < endY)
+        {
+            for (j = startY; j <= endY; j++)
+            {
                 printf("%d", matrix[startX][j]);
-                if (j <= endY) {
+                if (j <= endY)
+                {
                     printf(" ");
                 }
             }
         }
-       
-          
-        //Âú×ãÒÔÏÂÌõ¼şÊä³öµÚ¶ş²½
-        if (startX < endX) {
-            for (j = startX + 1; j <= endX; j++) {
+
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½
+        if (startX < endX)
+        {
+            for (j = startX + 1; j <= endX; j++)
+            {
                 printf("%d", matrix[j][endY]);
-                if (j <= endY){
+                if (j <= endY)
+                {
                     printf(" ");
                 }
             }
         }
-        //Âú×ãÒÔÏÂÌõ¼şÊä³öµÚÈı²½
-        if (endX > startX && startY < endY) {
-            for (j = endY - 1; j >= startY; j--){
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        if (endX > startX && startY < endY)
+        {
+            for (j = endY - 1; j >= startY; j--)
+            {
                 printf("%d", matrix[endX][j]);
-                if (j >= startY){
+                if (j >= startY)
+                {
                     printf(" ");
                 }
             }
         }
-        //Âú×ãÒÔÏÂÌõ¼şÊä³öµÚËÄ²½
-        if (endX - 1 > startX && startY < endY) {
-            for (i = endX - 1; i >= startX + 1; i--){
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½
+        if (endX - 1 > startX && startY < endY)
+        {
+            for (i = endX - 1; i >= startX + 1; i--)
+            {
                 printf("%d ", matrix[i][startX]);
-                if (i >= startX + 1){
+                if (i >= startX + 1)
+                {
                     printf(" ");
                 }
             }
@@ -69,7 +84,6 @@ int main() {
         startX++;
         startY++;
     }
-    
-   
+
     return 0;
 }
