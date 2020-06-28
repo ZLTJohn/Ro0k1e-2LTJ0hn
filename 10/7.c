@@ -1,30 +1,33 @@
 #include <stdio.h>
-int main() {
+int main()
+{
+    //freopen("data.in", "r", stdin);
+    //freopen("test.out", "w", stdout);
     int a;
     int i;
     int j;
-    scanf("%d",&a);
-    if(a==2)
+    scanf("%d", &a);
+    if (a == 2)
     {
         printf("2");
     }
     else
     {
-    printf("2\n");
-    for(j=2;j<a;j++)
-    {
-        for(i=2;i<j;i++)
+        printf("2\n");
+        for (j = 2; j <= a; j++)
         {
-            if(j%i==0)
+            for (i = 2; i < j; i++)
             {
-                break;
-            }
-            else if(i==j-1)
-            {
-                printf("%d\n",j);
+                if (j % i == 0)
+                {
+                    break;
+                }
+                else if (i == j - 1)
+                {
+                    printf("%d\n", j);
+                }
             }
         }
-    }
     }
 
     return 0;
