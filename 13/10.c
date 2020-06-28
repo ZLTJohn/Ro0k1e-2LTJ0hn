@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct node {
+typedef struct node
+{
     int data;
     struct node *next;
 } Node;
@@ -8,7 +9,10 @@ typedef struct node {
 Node *circle_create(int n);
 void count_off(Node *head, int n, int k, int m);
 
-int main() {
+int main()
+{
+    //freopen("data.in", "r", stdin);
+    //freopen("test.out", "w", stdout);
     int n, k, m;
     scanf("%d%d%d", &n, &k, &m);
     Node *head = circle_create(n);
@@ -16,66 +20,92 @@ int main() {
     return 0;
 }
 
-Node *circle_create(int n) {
+Node *circle_create(int n)
+{
     Node *temp, *new_node, *head;
     int i;
 
-    // 创建第一个链表节点并加数据
-    temp = (Node *) malloc(sizeof(Node));
+    // 麓麓陆篓碌脷脪禄赂枚脕麓卤铆陆脷碌茫虏垄录脫脢媒戮脻
+    temp = (Node *)malloc(sizeof(Node));
     head = temp;
     head->data = 1;
 
-    // 创建第 2 到第 n 个链表节点并加数据
-    for(i = 2; i <= n; i++) {
-        new_node = (Node *) malloc(sizeof(Node));
+    // 麓麓陆篓碌脷 2 碌陆碌脷 n 赂枚脕麓卤铆陆脷碌茫虏垄录脫脢媒戮脻
+    for (i = 2; i <= n; i++)
+    {
+        new_node = (Node *)malloc(sizeof(Node));
         new_node->data = i;
         temp->next = new_node;
         temp = new_node;
     }
 
-    // 最后一个节点指向头部构成循环链表
+    // 脳卯潞贸脪禄赂枚陆脷碌茫脰赂脧貌脥路虏驴鹿鹿鲁脡脩颅禄路脕麓卤铆
     temp->next = head;
 
     return head;
 }
 
-void count_off(Node *head, int n, int k, int m) {
-     Node *temp, *pre;
+void count_off(Node *head, int n, int k, int m)
+{
+    Node *temp, *pre;
     pre = head;
     temp = head;
-    
-    for (int i = 1 ; i < k - 1; i++) {
-        pre = pre -> next;
+
+    if (k == 1)
+    {
+        for (int i = 1; i < n; i++)
+        {
+            pre = pre->next;
+        }
     }
-    
+    else
+    {
+        for (int i = 1; i < k - 1; i++)
+        {
+            pre = pre->next;
+        }
+    }
+    if (m == 1)
+        pre = pre->next;
     int num = 0;
-    
-    while (num < n) {
-        if (m == 1){
-            if (num == n - 1) {
-                printf("%d", pre -> data);
-            }else{
-                printf("%d ", pre -> data);
+
+    while (num < n)
+    {
+        if (m == 1)
+        {
+            if (num == n - 1)
+            {
+                printf("%d", pre->data);
             }
-            pre = pre -> next;
-            free(pre);
+            else
+            {
+                printf("%d ", pre->data);
+            }
+            temp = pre;
+            pre = pre->next;
+            free(temp);
             num++;
-        }else{
-            for (int i = 1 ; i < m; i++) {
-                pre = pre -> next;
+        }
+        else
+        {
+            for (int i = 1; i < m; i++)
+            {
+                pre = pre->next;
             }
-            temp = pre -> next;
-            if (num == n - 1) {
-                printf("%d", temp -> data);
-            }else{
-                printf("%d ", temp -> data);
+            temp = pre->next;
+            if (num == n - 1)
+            {
+                printf("%d", temp->data);
             }
-            pre -> next = temp -> next;
+            else
+            {
+                printf("%d ", temp->data);
+            }
+            pre->next = temp->next;
             free(temp);
             num++;
         }
     }
-    
-    
+
     return;
 }
