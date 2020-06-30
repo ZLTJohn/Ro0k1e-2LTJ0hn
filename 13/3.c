@@ -44,13 +44,23 @@ void count_off(Node *head, int n, int k, int m) {
     Node*find;
     Node*temp;
     temp=head;
-    for(y=0;y<n;y++){
-        if(y==0){for(x=0;x<k;x++){
-            find=temp;
+    for(y=1;y<=n;y++){
+    	
+    	if(y!=1){
+    	temp = find;}
+        if(y==1){find = temp;for(x=0;x<k+m-2;x++){
+            find = temp;
+            temp = temp->next;
+        }}
+        else{
+		for(x=0;x<m;x++){
+			find = temp;
             temp=temp->next;
-        }}else{for(x=0;x<m;x++){find=temp;
-             temp=temp->next;}}printf("%d",find->data);
-    if(y!=n-1){printf(" ");}}
+			}
+    	}
+    	printf("%d",temp->data);
+    	find->next = temp->next;
+    if(y!=n){printf(" ");}}
 
     return;
 }
