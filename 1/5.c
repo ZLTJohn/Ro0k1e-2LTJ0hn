@@ -20,10 +20,10 @@ double bisection(int p, int q, double (*func)(int, int, double)) {    double a;
     c = (a + b)/ 2;
     while(fabs(f(p,q,c)) >= EPSILON){
         if((f(p,q,a) * f(p,q,c)) < 0) {
-            c = (c + a)/ 2, b = c,c = (a + b)/2;
+            b = c,c = (a + b)/2;
         }
         if((f(p,q,b) * f(p,q,c)) < 0) {
-            c = (b + c)/ 2, a = c,c = (a + b)/2;
+            a = c,c = (a + b)/2;
         }
     }
     return c;
