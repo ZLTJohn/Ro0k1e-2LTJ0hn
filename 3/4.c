@@ -28,7 +28,7 @@ int main() {
                     printf("%d", matrix[m - i / 4 - 1][n - a - 1]);counter++;
                 	space(counter, m * n);}break;
             case 0:
-                for(int a = (i / 4); a <= (n - i / 4 + 1); a++){
+                for(int a = (i / 4); a <= (n - i / 4); a++){
                     printf("%d", matrix[m - a - 1][i / 4 - 1]);counter++;
                 	space(counter, m * n);}break;
         }       

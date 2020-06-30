@@ -10,7 +10,7 @@ int main() {
     int n0 = n;
 	for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
-            scanf("%d ", &matrix[i][j]);
+            scanf("%d", &matrix[i][j]);
         }
     }
     if(m == 1 || n == 1) {
@@ -21,7 +21,7 @@ int main() {
         	}
             if(i != m - 1) printf(" ");
     	}
-        return;
+        return 0;
     }
     int i = 0;
     while(i != k) {

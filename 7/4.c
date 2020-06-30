@@ -11,11 +11,11 @@ int main(){
         if(c>30) printf("NO");
         else printf("YES");
     }
-    else if(c<=28) printf("YES");
     else if(a%100!=0&&a%4==0|a%400==0){
         if(c<=29) printf("YES");
         else printf("NO");
     }
+    else if(c<=28) printf("YES");
     else printf("NO");
         
     return 0;
