@@ -1,5 +1,8 @@
 #include <stdio.h>
-int main() {
+int main()
+{
+    //    freopen("data.in", "r", stdin);
+    //    freopen("test.out", "w", stdout);
     int matrix[100][100];
     int m;
     int n;
@@ -9,67 +12,77 @@ int main() {
     int startY;
     int endX;
     int endY;
-   
+
     startX = 0;
     startY = 0;
     endX = m;
     endY = n;
-   
-    //ÊäÈëĞĞÊım£¬ÁĞÊın
+
+    //è¾“å…¥è¡Œæ•°mï¼Œåˆ—æ•°n
     scanf("%d %d", &m, &n);
-    // ÊäÈëÒ»¸öm*nµÄ¾ØÕó
-    for (i = 0; i < m; i++){
-        for (j = 0; j < n; j++){
+    // è¾“å…¥ä¸€ä¸ªm*nçš„çŸ©é˜µ
+    for (i = 0; i < m; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
             scanf("%d", &matrix[i][j]);
         }
     }
-   
-    // ÅĞ¶ÏÑ­»·È¦ÊıµÄÌõ¼ş
-    while (startX * 2 < m && startY * 2 < n) {
+
+    int term = 0;
+    // åˆ¤æ–­å¾ªç¯åœˆæ•°çš„æ¡ä»¶
+    while (startX * 2 < m && startY * 2 < n)
+    {
         endX = m - 1 - startX;
         endY = n - 1 - startY;
-        // Êä³öµÚÒ»²½
-        if (startY < endY) {
-            for (j = startY; j <= endY; j++) {
+        // è¾“å‡ºç¬¬ä¸€æ­¥
+        //        if (startY < endY)
+        {
+            for (j = startY; j <= endY; j++)
+            {
+                if (term == 1)
+                    putchar(' ');
                 printf("%d", matrix[startX][j]);
-                if (j <= endY) {
-                    printf(" ");
-                }
+                term = 1;
             }
         }
-       
-          
-        //Âú×ãÒÔÏÂÌõ¼şÊä³öµÚ¶ş²½
-        if (startX < endX) {
-            for (j = startX + 1; j <= endX; j++) {
+
+        //æ»¡è¶³ä»¥ä¸‹æ¡ä»¶è¾“å‡ºç¬¬äºŒæ­¥
+        //        if (startX < endX)
+        {
+            for (j = startX + 1; j <= endX; j++)
+            {
+                if (term == 1)
+                    putchar(' ');
                 printf("%d", matrix[j][endY]);
-                if (j <= endY){
-                    printf(" ");
-                }
+                term = 1;
             }
         }
-        //Âú×ãÒÔÏÂÌõ¼şÊä³öµÚÈı²½
-        if (endX > startX && startY < endY) {
-            for (j = endY - 1; j >= startY; j--){
+        //æ»¡è¶³ä»¥ä¸‹æ¡ä»¶è¾“å‡ºç¬¬ä¸‰æ­¥
+        if (endX > startX && startY < endY)
+        {
+            for (j = endY - 1; j >= startY; j--)
+            {
+                if (term == 1)
+                    putchar(' ');
                 printf("%d", matrix[endX][j]);
-                if (j >= startY){
-                    printf(" ");
-                }
+                term = 1;
             }
         }
-        //Âú×ãÒÔÏÂÌõ¼şÊä³öµÚËÄ²½
-        if (endX - 1 > startX && startY < endY) {
-            for (i = endX - 1; i >= startX + 1; i--){
-                printf("%d ", matrix[i][startX]);
-                if (i >= startX + 1){
-                    printf(" ");
-                }
+        //æ»¡è¶³ä»¥ä¸‹æ¡ä»¶è¾“å‡ºç¬¬å››æ­¥
+        if (endX - 1 > startX && startY < endY)
+        {
+            for (i = endX - 1; i >= startX + 1; i--)
+            {
+                if (term == 1)
+                    putchar(' ');
+                printf("%d", matrix[i][startX]);
+                term = 1;
             }
         }
         startX++;
         startY++;
     }
-    
-   
+
     return 0;
 }
