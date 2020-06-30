@@ -7,7 +7,7 @@ int main() {
     char name[3];
     while (scanf("%s", name) != EOF){
         strcpy(temp[i], name);
-        printf("%s\n", temp[i]);
+        printf("%s", temp[i]);
         i++;
     }
     
@@ -22,7 +22,7 @@ int main() {
             counter += 1;
     	}
     }
-    for(int a = 0; a < 10; a++){
+    for(int a = 1; a < 10; a++){
         if ((temp[a][0] == '+' && temp[a][1] == 'r')){
             counter += 4;
         }else if((temp[a][0] == '+' && temp[a][1] == 'w')){

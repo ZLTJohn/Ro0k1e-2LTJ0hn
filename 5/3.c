@@ -14,7 +14,7 @@ int main() {
     char name[10][21];
     char temp;
     for (i = 0;i < 10;i++) {
-        scanf("%s\n",&name[i]);
+        scanf("%s",name[i]);
     }
     for (j = 0;j < 10;j++) {
         for (k = 0;k < 9 - j;k++) {

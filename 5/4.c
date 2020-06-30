@@ -12,6 +12,7 @@ int main() {
         for (j = 0; j < strlen(name); j++) {
             names[i][j] = name[j];
             }
+            names[i][j] = '\0';
         }
     
     for (i = 0; i < 10; i++) {

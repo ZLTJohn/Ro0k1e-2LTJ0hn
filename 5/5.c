@@ -6,13 +6,16 @@ int main() {
     int i;
     int j;
     int m = 10;
+    int k;
     for (i = 0; i < m; i++) {
         scanf("%s", name[i]);    
     }
     for (j = 0; j < m; j++) {
-        for (i = 0; i < m -1; i ++) {
+        for (i = 0; i < m -1 - j; i ++) {
             if(strcmp(name[i], name[i + 1]) > 0){
-                swap(&name[i], &name[i + 1]);    
+            	for(k = 0 ; k < 20 ; k++){
+            		swap(&name[i][k], &name[i + 1][k]);   
+				}
             }
         }
     }
