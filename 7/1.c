@@ -33,4 +33,3 @@ if(mouth<=12&&mouth>=1){
     }
     }else{printf("NO");}
     return 0;}
-    

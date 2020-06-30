@@ -6,7 +6,7 @@ int main() {
     char calculate[100][100];
     int i;
     int count=0;
-    while(scanf("%s",calculate[i])!=EOF){
+    while(scanf("%s",calculate[count])!=EOF){
         count++;
     }
     int result=0;
