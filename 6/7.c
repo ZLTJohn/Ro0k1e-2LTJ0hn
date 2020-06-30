@@ -11,39 +11,30 @@ int main()
     scanf("%c", &temp);
     if (temp == 'x')
         rwx ^= (1 << 0);
-    else if (temp == 'w')
-    {
+    else if (temp == 'w') {
         rwx ^= (1 << 1);
         scanf("%c", &temp);
         if (temp == 'x')
             rwx ^= (1 << 0);
-    }
-    else if (temp == 'r')
-    {
+    } else if (temp == 'r') {
         rwx ^= (1 << 2);
         scanf("%c", &temp);
-        if (temp == 'w')
-        {
+        if (temp == 'w') {
             rwx ^= (1 << 1);
             scanf("%c", &temp);
             if (temp == 'x')
                 rwx ^= (1 << 0);
-        }
-        else if (temp == 'x')
+        } else if (temp == 'x')
             rwx ^= (1 << 0);
     }
     //modification
-    while (scanf("%c", &temp) != EOF)
-    {
+    while (scanf("%c", &temp) != EOF) {
         if (temp == '\n')
             scanf("%c", &temp);
-        if (temp == '+')
-        {
+        if (temp == '+') {
             scanf("%c", &temp);
             add(temp);
-        }
-        else if (temp == '-')
-        {
+        } else if (temp == '-') {
             scanf("%c", &temp);
             delete (temp);
         }

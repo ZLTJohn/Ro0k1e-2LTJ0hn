@@ -1,35 +1,36 @@
-    Node *temp, *new_node, *head;
-    int i;
+Node *temp, *new_node, *head;
+int i;
 
-    // ´´½¨µÚÒ»¸öÁ´±í½Úµã²¢¼ÓÊý¾Ý
-    temp = (Node *) malloc(sizeof(Node));
-    head = temp;
-    head->data = 1;
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµã²¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+temp = (Node*)malloc(sizeof(Node));
+head = temp;
+head->data = 1;
 
-    // ´´½¨µÚ 2 µ½µÚ n ¸öÁ´±í½Úµã²¢¼ÓÊý¾Ý
-    for(i = 2; i <= n; i++) {
-        new_node = (Node *) malloc(sizeof(Node));
-        new_node->data = i;
-        temp->next = new_node;
-        temp = new_node;
-    }
-
-    // ×îºóÒ»¸ö½ÚµãÖ¸ÏòÍ·²¿¹¹³ÉÑ­»·Á´±í
-    temp->next = head;
-
-    return head;
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2 ï¿½ï¿½ï¿½ï¿½ n ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµã²¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+for (i = 2; i <= n; i++) {
+    new_node = (Node*)malloc(sizeof(Node));
+    new_node->data = i;
+    temp->next = new_node;
+    temp = new_node;
 }
 
-void count_off(Node *head, int n, int k, int m) {
-Node *temp = head;
+// ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½Ö¸ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+temp->next = head;
+
+return head;
+}
+
+void count_off(Node* head, int n, int k, int m)
+{
+    Node* temp = head;
     if (k == 1) {
         for (int i = 1; i < n; i++) {
             temp = temp->next;
         }
-    }else{
-        for (int i = 1; i < k-1; i++) {
-        		temp = temp->next;
-    		}
+    } else {
+        for (int i = 1; i < k - 1; i++) {
+            temp = temp->next;
+        }
     }
     int num = 0;
     int count = 0;
@@ -37,18 +38,17 @@ Node *temp = head;
         num++;
         if (num == m) {
             count++;
-            if(count == n){
-            	printf("%d", temp->next->data);
-            }else{
-               	printf("%d ", temp->next->data); 
+            if (count == n) {
+                printf("%d", temp->next->data);
+            } else {
+                printf("%d ", temp->next->data);
             }
-            
-            
+
             temp->next = temp->next->next;
-            
+
             num = 0;
-        }else{
-            
+        } else {
+
             temp = temp->next;
         }
     }

@@ -22,12 +22,9 @@ int main()
     int y;
     int m = 1;
     int b = 1;
-    for (x = 0; x <= n / 2; x++)
-    {
-        for (y = 0; y <= n / 3; y++)
-        {
-            if (x * 2 + y * 3 == n)
-            {
+    for (x = 0; x <= n / 2; x++) {
+        for (y = 0; y <= n / 3; y++) {
+            if (x * 2 + y * 3 == n) {
                 i += c(x, x + y);
             }
         }

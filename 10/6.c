@@ -5,17 +5,13 @@ int main()
     //freopen("test.out", "w", stdout);
     int a, b, c;
     scanf("%d", &c);
-    for (b = 2; b <= c; b++)
-    {
-        for (a = 2; a < b; a++)
-        {
-            if (b % a == 0)
-            {
+    for (b = 2; b <= c; b++) {
+        for (a = 2; a < b; a++) {
+            if (b % a == 0) {
                 break;
             }
         }
-        if (a >= b)
-        {
+        if (a >= b) {
             printf("%d\n", b);
         }
     }

@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 #define PI 3.14159
-int main() {
+int main()
+{
     float r;
     scanf("%f", &r);
     printf("%.3f\n", PI * r * 2);

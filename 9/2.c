@@ -1,16 +1,17 @@
 #include <stdio.h>
 
-int main() {
-	int N;//×ÜÌ¨½×Êý
+int main()
+{
+    int N; //ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½
     scanf("%d", &N);
-    int step[50];//step[N]N¼¶Ì¨½×µÄ·½·¨Êý
+    int step[50]; //step[N]Nï¿½ï¿½Ì¨ï¿½×µÄ·ï¿½ï¿½ï¿½ï¿½ï¿½
     int i;
     step[0] = 0;
     step[1] = 0;
     step[2] = 1;
     step[3] = 1;
     step[4] = 1;
-    for (i = 5; i < N; i++){
+    for (i = 5; i < N; i++) {
         step[i] = step[i - 2] + step[i - 3];
     }
     printf("%d", step[N]);

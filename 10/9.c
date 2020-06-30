@@ -8,16 +8,11 @@ int main()
     int c;
     scanf("%d", &a);
     printf("2\n");
-    for (b = 2; b <= a; b++)
-    {
-        for (c = 2; c < b; c++)
-        {
-            if (b % c == 0)
-            {
+    for (b = 2; b <= a; b++) {
+        for (c = 2; c < b; c++) {
+            if (b % c == 0) {
                 break;
-            }
-            else if (c == b - 1)
-            {
+            } else if (c == b - 1) {
                 printf("%d\n", b);
             }
         }

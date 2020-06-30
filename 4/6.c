@@ -11,17 +11,13 @@ int main()
     int tmpt;
 
     // ¶ÁÈë¸ø¶¨µÄÊý×Ö
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++) {
         scanf("%d", &numbers[i]);
     }
 
-    for (i = 0; i < n; i++)
-    {
-        for (j = i; j < n; j++)
-        {
-            if (numbers[i] < numbers[j])
-            {
+    for (i = 0; i < n; i++) {
+        for (j = i; j < n; j++) {
+            if (numbers[i] < numbers[j]) {
                 tmpt = numbers[i];
                 numbers[i] = numbers[j];
                 numbers[j] = tmpt;
@@ -29,14 +25,10 @@ int main()
         }
     }
 
-    for (int m = 0; m < 10; m++)
-    {
-        if (m != 9)
-        {
+    for (int m = 0; m < 10; m++) {
+        if (m != 9) {
             printf("%d ", numbers[m]);
-        }
-        else
-        {
+        } else {
             printf("%d", numbers[m]);
         }
     }

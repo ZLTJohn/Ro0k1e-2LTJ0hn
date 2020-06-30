@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-int main() {
+int main()
+{
     int r = 0, w = 0, x = 0;
     char sign[3];
     char temp[2];
@@ -16,27 +17,29 @@ int main() {
             x = 1;
         }
     }
-    
+
     while (scanf("%s", temp) != EOF) {
-        if (strcmp(temp,"+x") == 0) {
+        if (strcmp(temp, "+x") == 0) {
             x++;
         }
-         if (strcmp(temp,"-x") == 0) {
+        if (strcmp(temp, "-x") == 0) {
             x--;
         }
-         if (strcmp(temp,"+r") == 0) {
+        if (strcmp(temp, "+r") == 0) {
             r++;
-        } 
-        if (strcmp(temp,"-r") == 0) {
+        }
+        if (strcmp(temp, "-r") == 0) {
             r--;
-        } if (strcmp(temp,"+w") == 0) {
+        }
+        if (strcmp(temp, "+w") == 0) {
             w++;
-        } if (strcmp(temp,"-w") == 0) {
+        }
+        if (strcmp(temp, "-w") == 0) {
             w--;
         }
     }
-    
-    printf("%d\n", r*4 + w*2 + x);
+
+    printf("%d\n", r * 4 + w * 2 + x);
 
     return 0;
 }

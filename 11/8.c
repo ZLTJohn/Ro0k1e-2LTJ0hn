@@ -26,8 +26,7 @@ void f(char string[])
     k = strlen(string);
     for (i = 1; i <= k; i++)
         arr[i % 32] += (int)string[i - 1];
-    for (j = 0; j < 32; j++)
-    {
+    for (j = 0; j < 32; j++) {
         bits[j] = arr[31 - j] ^ (arr[j] << 1);
         result[j + 1] = (char)(bits[j] % 85 + 34);
     }

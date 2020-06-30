@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main()
+{
     int n;
     scanf("%d\n", &n);
     size_t max = 0;
@@ -12,8 +13,8 @@ int main() {
         gets(name);
         current = strlen(name);
         if (current > max) {
-           max = current;
-           strcpy(maxName, name);
+            max = current;
+            strcpy(maxName, name);
         }
     }
     printf(maxName);

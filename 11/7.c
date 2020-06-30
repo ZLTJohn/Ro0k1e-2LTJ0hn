@@ -10,14 +10,12 @@ int main()
     memset(arr, 0, sizeof(arr));
     memset(fs, '\0', sizeof(fs));
     scanf("%s", str);
-    for (i = 0; i < strlen(str); i++)
-    {
+    for (i = 0; i < strlen(str); i++) {
         if (str[i] == '\n')
             break;
         arr[(i + 1) % 32] += str[i];
     }
-    for (i = 0; i < 32; i++)
-    {
+    for (i = 0; i < 32; i++) {
         bits[i] = arr[31 - i] ^ (arr[i] << 1);
         fs[i] = bits[i] % 85 + 34;
     }

@@ -1,13 +1,13 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 #define EPSILON 1e-7
 
 double bisection(int p, int q, double (*func)(int, int, double));
 double f(int p, int q, double x);
 int main()
 {
-//    freopen("data.in", "r", stdin);
-//    freopen("test.out", "w", stdout);
+    //    freopen("data.in", "r", stdin);
+    //    freopen("test.out", "w", stdout);
 
     int p;
     int q;
@@ -21,14 +21,10 @@ double bisection(int p, int q, double (*func)(int, int, double))
     double a = -20;
     double b = 20;
     double m = (a + b) / 2;
-    while (1)
-    {
-        if (fabs(func(p, q, m)) < EPSILON)
-        {
+    while (1) {
+        if (fabs(func(p, q, m)) < EPSILON) {
             return m;
-        }
-        else
-        {
+        } else {
             if (func(p, q, m) * func(p, q, a) < 0)
                 b = m;
             else

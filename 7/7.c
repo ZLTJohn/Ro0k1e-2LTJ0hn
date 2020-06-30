@@ -13,12 +13,9 @@ int main()
     Month31valid = (Month == 1 || Month == 3 || Month == 5 || Month == 7 || Month == 8 || Month == 10 || Month == 12) && (Date < 32);
     Datevalid = Februaryvalid || Month30valid || Month31valid;
     //printf("%d\n%d\n%d\n",Month31valid,Month==1||3||5||7||8||10||12,Month==8);//调试用
-    if (Datevalid == 1)
-    {
+    if (Datevalid == 1) {
         printf("YES");
-    }
-    else
-    {
+    } else {
         printf("NO");
     }
     return 0;

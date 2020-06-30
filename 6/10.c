@@ -24,18 +24,12 @@ int main()
         ;
     j = i;
     //判断原文件的权限，用十进制表示
-    for (i = 0; i < strlen(pms); i++)
-    {
-        if (pms[i] == 'r')
-        {
+    for (i = 0; i < strlen(pms); i++) {
+        if (pms[i] == 'r') {
             a += 4;
-        }
-        else if (pms[i] == 'w')
-        {
+        } else if (pms[i] == 'w') {
             a += 2;
-        }
-        else
-        {
+        } else {
             a += 1;
         }
     }
@@ -70,35 +64,21 @@ int main()
             }
         }*/
     b = a;
-    for (i = 0; i < j - 1; i++)
-    {
-        if (change_pms[i][0] == '+')
-        {
-            if (change_pms[i][0 + 1] == 'r')
-            {
+    for (i = 0; i < j - 1; i++) {
+        if (change_pms[i][0] == '+') {
+            if (change_pms[i][0 + 1] == 'r') {
                 b |= 4;
-            }
-            else if (change_pms[i][0 + 1] == 'w')
-            {
+            } else if (change_pms[i][0 + 1] == 'w') {
                 b |= 2;
-            }
-            else
-            {
+            } else {
                 b |= 1;
             }
-        }
-        else
-        {
-            if (change_pms[i][0 + 1] == 'r')
-            {
+        } else {
+            if (change_pms[i][0 + 1] == 'r') {
                 b &= 3;
-            }
-            else if (change_pms[i][0 + 1] == 'w')
-            {
+            } else if (change_pms[i][0 + 1] == 'w') {
                 b &= 5;
-            }
-            else
-            {
+            } else {
                 b &= 6;
             }
         }

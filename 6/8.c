@@ -4,60 +4,46 @@ int main()
     //    freopen("data.in", "r", stdin);
     //    freopen("test.out", "w", stdout);
     char n;
-    int a[3] = {0, 0, 0};
-    for (int i = 0; i < 3; i++)
-    {
+    int a[3] = { 0, 0, 0 };
+    for (int i = 0; i < 3; i++) {
         scanf("%c", &n);
-        if (n == 'r')
-        {
+        if (n == 'r') {
             a[0] = 1;
         }
-        if (n == 'w')
-        {
+        if (n == 'w') {
             a[1] = 1;
         }
-        if (n == 'x')
-        {
+        if (n == 'x') {
             a[2] = 1;
         }
         if (n == '\n')
             break;
     }
-    while (scanf("%c", &n) != EOF)
-    {
-        if (n == '\n')
-        {
+    while (scanf("%c", &n) != EOF) {
+        if (n == '\n') {
             continue;
         }
-        if (n == '+')
-        {
+        if (n == '+') {
             scanf("%c", &n);
-            if (n == 'r')
-            {
+            if (n == 'r') {
                 a[0] = 1;
             }
-            if (n == 'w')
-            {
+            if (n == 'w') {
                 a[1] = 1;
             }
-            if (n == 'x')
-            {
+            if (n == 'x') {
                 a[2] = 1;
             }
         }
-        if (n == '-')
-        {
+        if (n == '-') {
             scanf("%c", &n);
-            if (n == 'r')
-            {
+            if (n == 'r') {
                 a[0] = 0;
             }
-            if (n == 'w')
-            {
+            if (n == 'w') {
                 a[1] = 0;
             }
-            if (n == 'x')
-            {
+            if (n == 'x') {
                 a[2] = 0;
             }
         }

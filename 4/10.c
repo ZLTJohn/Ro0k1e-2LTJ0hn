@@ -13,17 +13,13 @@ int main()
     int j;
     int o;
     // ¶ÁÈë¸ø¶¨µÄÊý×Ö
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++) {
         scanf("%d", &numbers[i]);
     }
-    for (j = 0; j < n; j++)
-    {
+    for (j = 0; j < n; j++) {
         m = j;
-        for (k = j; k < n - 1; k++)
-        {
-            if (numbers[m] < numbers[k + 1])
-            {
+        for (k = j; k < n - 1; k++) {
+            if (numbers[m] < numbers[k + 1]) {
                 m = k + 1;
             }
         }
@@ -31,14 +27,10 @@ int main()
         numbers[j] = numbers[m];
         numbers[m] = o;
     }
-    for (int q = 0; q < n; q++)
-    {
-        if (q == 9)
-        {
+    for (int q = 0; q < n; q++) {
+        if (q == 9) {
             printf("%d", numbers[q]);
-        }
-        else
-        {
+        } else {
             printf("%d ", numbers[q]);
         }
     }
