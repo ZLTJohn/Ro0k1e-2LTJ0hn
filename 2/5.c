@@ -23,14 +23,14 @@ int main() {
         }
     }
     
-     for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
+     for (i = 0; i < m; i++) {
+        for (j = 0; j < m; j++) {
             temp = 0;
-            for (k = 0; k < m; k++) {
+            for (k = 0; k < n; k++) {
                 temp += matrix_a[i][k] * matrix_b[k][j];
             }
             matrixResult[i][j] = temp;
-            if(j==n-1){
+            if(j==m-1){
                 printf("%d\n", matrixResult[i][j]);
             }else{
                 printf("%d ", matrixResult[i][j]);
