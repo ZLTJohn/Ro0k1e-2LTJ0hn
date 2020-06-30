@@ -32,12 +32,12 @@ int main() {
     */
     int m3[m][m];
     memset(m3,0,sizeof(int)*m*m);
-    for(int i=0;i<m;i++){
+    /*for(int i=0;i<m;i++){
         for(int j=0;j<m;j++){
             printf("%d ",m3[i][j]);
         }
         printf("\n");
-    }
+    }*/
     //¾ØÕóÏà³Ë ·ÅÈëm3
     for(int i=0;i<m;i++){
         for(int j=0;j<m;j++){
