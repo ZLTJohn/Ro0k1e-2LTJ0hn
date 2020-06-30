@@ -8,7 +8,7 @@ int main()
     char name[3];
     while (scanf("%s", name) != EOF) {
         strcpy(temp[i], name);
-        printf("%s", temp[i]);
+        //printf("%s", temp[i]);
         i++;
     }
 

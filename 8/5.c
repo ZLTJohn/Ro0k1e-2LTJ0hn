@@ -8,7 +8,7 @@ int main()
 
     char input;
 
-    char name[n][100]; //i ����ѧ���ı�� j ����ѧ��������
+    char name[n][105]; //i ����ѧ���ı�� j ����ѧ��������
 
     //�������е����ֵ�����ĸ�����
     for (int i = 0; i < n; i++) {
@@ -16,7 +16,7 @@ int main()
     }
 
     //�ҳ��������
-    char name_max[100];
+    char name_max[105];
 
     strcpy(name_max, name[0]);
 

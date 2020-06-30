@@ -7,10 +7,9 @@ int main()
     int n;
     int i, j;
     scanf("%d", &n);
-    char names[n][101];
+    char names[105][101];
     char temp[101];
 
-    while (scanf("%c", &names[i][j]) != EOF) {
         for (i = 0; i < n; i++) {
             for (j = 0; j < 101; j++) {
                 scanf("%c", &names[i][j]);
@@ -20,7 +19,6 @@ int main()
                 }
             }
         }
-    }
 
     int max = strlen(names[0]);
     int number = 0;

@@ -29,7 +29,8 @@ int main()
 
     for (int i = 0; i < 10; i++) //ѭ����������Ժ�Ľ��
     {
-        printf("%d  ", a[i]);
+        printf("%d", a[i]);
+        if (i < 9) putchar(' ');
     }
     return 0;
 }

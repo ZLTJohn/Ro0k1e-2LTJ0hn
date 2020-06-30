@@ -2,7 +2,8 @@
 #include <string.h>
 int main()
 {
-    int arr[32];
+    //freopen("1.in", "r", stdin);
+    int arr[35];
     memset(arr, 0, sizeof(arr));
     char n;
     int i = 1;
@@ -11,10 +12,10 @@ int main()
             break;
         }
         int c = (int)n;
-        arr[i % 32] = c;
+        arr[i % 32] += c;
         i++;
     }
-    int bits[32];
+    int bits[35];
     int j;
     for (j = 0; j < 32; j++) {
         int d = arr[31 - j] ^ arr[j] << 1;

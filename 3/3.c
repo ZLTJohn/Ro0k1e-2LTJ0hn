@@ -1,74 +1,39 @@
 #include <stdio.h>
-
-int main()
-{
-    int matrix[100][100];
-    int m;
-    int n;
-    scanf("%d%d", &m, &n);
-
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            scanf("%d", &matrix[i][j]);
-        }
-    }
-
-    int j;
-    int count = 0;
-    if (m == 1) {
-        for (j = 0; j < n; j++) {
-            printf("%d", matrix[0][j]);
-            count++;
-            if (count != m * n)
-                printf(" ");
-        }
-    } else if (n == 1) {
-        for (j = 0; j < m; j++) {
-            printf("%d", matrix[j][0]);
-            count++;
-            if (count != m * n)
-                printf(" ");
-        }
-    } else {
-        for (int i = 0; i < 2 * m; i++) {
-            switch (i % 4) {
-            case 0:
-                for (j = i / 4; j < n - i / 4 - 1; j++) {
-                    printf("%d", matrix[i / 4][j]);
-                    count++;
-                    if (count != m * n)
-                        printf(" ");
-                }
-                break;
-            case 1:
-                for (j = i / 4; j < m - i / 4 - 1; j++) {
-                    printf("%d", matrix[j][n - 1 - i / 4]);
-                    count++;
-                    if (count != m * n)
-                        printf(" ");
-                    if (m % 2 == 1 && count == m * n - 1) {
-                        printf("%d", matrix[j][m - i / 4 - 1]);
-                    }
-                }
-                break;
-            case 2:
-                for (j = n - 1 - i / 4; j > i / 4; j--) {
-                    printf("%d", matrix[m - i / 4 - 1][j]);
-                    count++;
-                    if (count != m * n)
-                        printf(" ");
-                }
-                break;
-            case 3:
-                for (j = m - 1 - i / 4; j > i / 4; j--) {
-                    printf("%d", matrix[j][i / 4]);
-                    count++;
-                    if (count != m * n)
-                        printf(" ");
-                }
-                break;
-            }
-        }
-    }
-    return 0;
+int dx[] = {0, 1, 0, -1};
+int dy[] = {1, 0, -1, 0};
+int inf = 0x3f3f3f3f;
+int main() {
+    int a[110][110];
+	for (int i = 0; i < 110; i++) {
+	    for (int j = 0; j < 110; j++) {
+		    a[i][j] = inf;
+		}
+	}
+	int n, m;
+	scanf("%d%d", &n, &m);
+	for (int i = 1; i <= n; i++) {
+	    for (int j = 1; j <= m; j++) {
+		    scanf("%d", &a[i][j]);
+		}
+	}
+	int dir = 0, cnt = 0;
+	int x = 1, y = 1;
+	printf("%d", a[x][y]);
+	a[x][y] = inf;
+	while (1) {
+	    if (a[x + dx[dir]][y + dy[dir]] == inf) {
+		    dir++;
+			dir %= 4;
+			continue;
+		}
+		x += dx[dir];
+		y += dy[dir];
+		printf(" %d", a[x][y]);
+		a[x][y] = inf;
+		cnt++;
+		if (cnt == n * m - 1) {
+		    break;
+		}
+	}
+	return 0;
 }

@@ -11,7 +11,7 @@ int main()
     } else if (b == 2) {
         printf("2");
     } else if (b > 2) {
-        printf("2\n3\n");
+        printf("2\n");
         for (a = 3; a <= b; a += 2) {
             for (c = 3; c <= a; c += 2) {
                 if (a % c == 0 && a != c) {

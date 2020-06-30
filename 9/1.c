@@ -7,7 +7,7 @@ int main()
 {
     int N; //��̨����
     scanf("%d", &N);
-    int step[50]; //step[N]N��̨�׵ķ�����
+    int step[55]; //step[N]N��̨�׵ķ�����
     step[0] = 0;
     step[1] = 0;
     step[2] = 1;

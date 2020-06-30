@@ -4,12 +4,12 @@
 
 int main()
 {
-    char arr[32];
-    char str[32];
-    int bits[32];
-    char result[32];
+    //freopen("1.in", "r", stdin);
+    int arr[505];
+    char str[505];
+    int bits[505];
+    char result[505];
 
-    scanf("%s", &arr[32]);
     char input;
     int j = 0;
 
@@ -20,17 +20,11 @@ int main()
     while (scanf("%c", &input) != EOF) {
         char str[2] = "\0";
         str[0] = input;
-        if (strcmp(str, "\n")) {
+        if (strcmp(str, "\n") == 0) {
             break;
-        } else if (j >= 32) {
-            break;
-        }
-        arr[j] = (int)(input);
+        } 
+        arr[(j + 1) % 32] += (int)(input);
         j++;
-    }
-
-    for (int i = 0; i < 32; i++) {
-        arr[(i + 1) % 32] = arr[(i + 1) % 32] + (int)(str[i]);
     }
 
     for (int i = 0; i < 32; i++) {

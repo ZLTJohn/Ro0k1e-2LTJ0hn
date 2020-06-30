@@ -4,7 +4,7 @@ int main()
 {
     int N;
     int i;
-    int part[N];
+    int part[55];
     part[2] = 1;
     part[3] = 1;
     part[4] = 1;

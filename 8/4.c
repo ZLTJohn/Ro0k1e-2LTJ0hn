@@ -4,20 +4,20 @@ int main()
 {
     int n;
     scanf("%d\n", &n);
-    char name[n][100];
-    char temp[100];
+    char name[105][105];
+    char temp[105];
 
     for (int i = 0; i < n; i++) {
         gets(name[i]);
     }
 
     for (int j = 0; j < n; j++) {
-        for (int k = 0; k <= n - j; k++) {
-            char temp[20];
-            if ((strlen(name[k]) < strlen(name[k + 1]))) {
-                strcpy(temp, name[k]);
-                strcpy(name[k], name[k + 1]);
-                strcpy(name[k + 1], temp);
+        for (int k = 0; k < n; k++) {
+            char temp[105];
+            if ((strlen(name[j]) > strlen(name[k]))) {
+                strcpy(temp, name[j]);
+                strcpy(name[j], name[k]);
+                strcpy(name[k], temp);
             }
         }
     }
