@@ -1,22 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-typedef struct node {
-    int data;
-    struct node *next;
-} Node;
-
-Node *circle_create(int n);
-void count_off(Node *head, int n, int k, int m);
-
-int main() {
-    int n, k, m;
-    scanf("%d%d%d", &n, &k, &m);
-    Node *head = circle_create(n);
-    count_off(head, n, k, m);
-    return 0;
-}
-
-Node *circle_create(int n) {
     Node *temp, *new_node, *head;
     int i;
 
@@ -56,7 +37,7 @@ Node *temp = head;
         num++;
         if (num == m) {
             count++;
-            if(count == n - 1){
+            if(count == n){
             	printf("%d", temp->next->data);
             }else{
                	printf("%d ", temp->next->data); 

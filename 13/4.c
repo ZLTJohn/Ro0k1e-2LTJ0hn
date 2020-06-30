@@ -69,7 +69,11 @@ void count_off(Node *head, int n, int k, int m) {
         }
         pre=temp;
         temp=temp->next;
-        i++;
+        if(i == m)
+         	i = 1;
+        else if(i!=m && m!= 1)
+        	i++;
+        
     }
     
     return;

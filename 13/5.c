@@ -50,7 +50,7 @@ void count_off(Node *head, int n, int k, int m) {
     temp=pre->next;
     i=1;
     while(times<=n){
-        if(i==m){printf("%d",temp->data);times++;
+        if(i==m){printf("%d ",temp->data);times++;
            pre->next=pre->next->next;
                 temp=pre;
                 i=0;if(times!=n+1){printf("");}}
@@ -58,7 +58,4 @@ void count_off(Node *head, int n, int k, int m) {
         temp=temp->next;
         i++;}
     return;}
-    }
 
-    return;
-}
