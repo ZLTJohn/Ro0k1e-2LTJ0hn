@@ -5,7 +5,7 @@ int main() {
     scanf("%f",&r);
 a=2*PI*r;
     b=PI*r*r;
-    printf("%.2f\n",a);
- printf("%.2f",b);
+    printf("%.3f\n",a);
+ printf("%.3f",b);
     return 0;
 }
