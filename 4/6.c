@@ -1,34 +1,44 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
+    //    freopen("data.in", "r", stdin);
+    //    freopen("test.out", "w", stdout);
     int n = 10;
     int m;
     int numbers[10];
-    int i,j;
+    int i, j;
     int tmpt;
 
-    // ¶ÁÈë¸ø¶¨µÄÊı×Ö
-    for (i = 0; i < n; i++) {
+    // Â¶ÃÃˆÃ«Â¸Ã¸Â¶Â¨ÂµÃ„ÃŠÃ½Ã—Ã–
+    for (i = 0; i < n; i++)
+    {
         scanf("%d", &numbers[i]);
     }
 
-    for (i = 0; i < n; i++) {
-        for (j = i; j < n; j++) {
-            if (numbers[i] < numbers[j]){
+    for (i = 0; i < n; i++)
+    {
+        for (j = i; j < n; j++)
+        {
+            if (numbers[i] < numbers[j])
+            {
                 tmpt = numbers[i];
                 numbers[i] = numbers[j];
-                numbers[j] =   tmpt;
+                numbers[j] = tmpt;
             }
         }
     }
 
-    for (int m = 0; m < 10; m++) {
-        if (m != 9){
+    for (int m = 0; m < 10; m++)
+    {
+        if (m != 9)
+        {
             printf("%d ", numbers[m]);
-        }else{
+        }
+        else
+        {
             printf("%d", numbers[m]);
         }
-        
     }
 
     return 0;
